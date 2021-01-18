@@ -18,5 +18,301 @@ CHIP Mux8Way16 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+
+    And(a = sel[0], b = sel[1], out = a01);
+    And(a = sel[0], b = sel[2], out = a02);
+    And(a = sel[1], b = sel[2], out = a12);
+    
+    Or(a = sel[0], b = sel[1], out = o01);
+    Or(a = sel[0], b = sel[2], out = o02);
+    Or(a = sel[1], b = sel[2], out = o12);
+
+    Not(in = sel[0], out = n0);
+    Not(in = sel[1], out = n1);
+    Not(in = sel[2], out = n2);
+
+    Or(a = o01, b = sel[2], out = o012);
+    Not(in = o012, out = no012);
+
+    And(a = no012, b = a[0], out = ta0);
+    And(a = no012, b = a[1], out = ta1);
+	And(a = no012, b = a[2], out = ta2);
+	And(a = no012, b = a[3], out = ta3);
+	And(a = no012, b = a[4], out = ta4);
+	And(a = no012, b = a[5], out = ta5);
+	And(a = no012, b = a[6], out = ta6);
+	And(a = no012, b = a[7], out = ta7);
+	And(a = no012, b = a[8], out = ta8);
+	And(a = no012, b = a[9], out = ta9);
+	And(a = no012, b = a[10], out = ta10);
+	And(a = no012, b = a[11], out = ta11);
+	And(a = no012, b = a[12], out = ta12);
+	And(a = no012, b = a[13], out = ta13);
+	And(a = no012, b = a[14], out = ta14);
+	And(a = no012, b = a[15], out = ta15);
+
+	Or(a = n0, b = o12, out = o12n0);
+	Not(in = o12n0, out = no12n0);
+
+	And(a = no12n0, b = b[0], out = tb0);
+	And(a = no12n0, b = b[1], out = tb1);
+	And(a = no12n0, b = b[2], out = tb2);
+	And(a = no12n0, b = b[3], out = tb3);
+	And(a = no12n0, b = b[4], out = tb4);
+	And(a = no12n0, b = b[5], out = tb5);
+	And(a = no12n0, b = b[6], out = tb6);
+	And(a = no12n0, b = b[7], out = tb7);
+	And(a = no12n0, b = b[8], out = tb8);
+	And(a = no12n0, b = b[9], out = tb9);
+	And(a = no12n0, b = b[10], out = tb10);
+	And(a = no12n0, b = b[11], out = tb11);
+	And(a = no12n0, b = b[12], out = tb12);
+	And(a = no12n0, b = b[13], out = tb13);
+	And(a = no12n0, b = b[14], out = tb14);
+	And(a = no12n0, b = b[15], out = tb15);
+
+	Or(a = n1, b = o02, out = o02n1);
+	Not(in = o02n1, out = no02n1);
+
+	And(a = no02n1, b = c[0], out = tc0);
+	And(a = no02n1, b = c[1], out = tc1);
+	And(a = no02n1, b = c[2], out = tc2);
+	And(a = no02n1, b = c[3], out = tc3);
+	And(a = no02n1, b = c[4], out = tc4);
+	And(a = no02n1, b = c[5], out = tc5);
+	And(a = no02n1, b = c[6], out = tc6);
+	And(a = no02n1, b = c[7], out = tc7);
+	And(a = no02n1, b = c[8], out = tc8);
+	And(a = no02n1, b = c[9], out = tc9);
+	And(a = no02n1, b = c[10], out = tc10);
+	And(a = no02n1, b = c[11], out = tc11);
+	And(a = no02n1, b = c[12], out = tc12);
+	And(a = no02n1, b = c[13], out = tc13);
+	And(a = no02n1, b = c[14], out = tc14);
+	And(a = no02n1, b = c[15], out = tc15);
+
+	And(a = a01, b = n2, out = an201);
+
+	And(a = an201, b = d[0], out = td0);
+	And(a = an201, b = d[1], out = td1);
+	And(a = an201, b = d[2], out = td2);
+	And(a = an201, b = d[3], out = td3);
+	And(a = an201, b = d[4], out = td4);
+	And(a = an201, b = d[5], out = td5);
+	And(a = an201, b = d[6], out = td6);
+	And(a = an201, b = d[7], out = td7);
+	And(a = an201, b = d[8], out = td8);
+	And(a = an201, b = d[9], out = td9);
+	And(a = an201, b = d[10], out = td10);
+	And(a = an201, b = d[11], out = td11);
+	And(a = an201, b = d[12], out = td12);
+	And(a = an201, b = d[13], out = td13);
+	And(a = an201, b = d[14], out = td14);
+	And(a = an201, b = d[15], out = td15);
+
+	Or(a = n2, b = o01, out = on201);
+	Not(in = on201, out = non201);
+
+	And(a = non201, b = e[0], out = te0);
+	And(a = non201, b = e[1], out = te1);
+	And(a = non201, b = e[2], out = te2);
+	And(a = non201, b = e[3], out = te3);
+	And(a = non201, b = e[4], out = te4);
+	And(a = non201, b = e[5], out = te5);
+	And(a = non201, b = e[6], out = te6);
+	And(a = non201, b = e[7], out = te7);
+	And(a = non201, b = e[8], out = te8);
+	And(a = non201, b = e[9], out = te9);
+	And(a = non201, b = e[10], out = te10);
+	And(a = non201, b = e[11], out = te11);
+	And(a = non201, b = e[12], out = te12);
+	And(a = non201, b = e[13], out = te13);
+	And(a = non201, b = e[14], out = te14);
+	And(a = non201, b = e[15], out = te15);
+
+	And(a = n1, b = a02, out = an102);
+
+	And(a = an102, b = f[0], out = tf0);
+	And(a = an102, b = f[1], out = tf1);
+	And(a = an102, b = f[2], out = tf2);
+	And(a = an102, b = f[3], out = tf3);
+	And(a = an102, b = f[4], out = tf4);
+	And(a = an102, b = f[5], out = tf5);
+	And(a = an102, b = f[6], out = tf6);
+	And(a = an102, b = f[7], out = tf7);
+	And(a = an102, b = f[8], out = tf8);
+	And(a = an102, b = f[9], out = tf9);
+	And(a = an102, b = f[10], out = tf10);
+	And(a = an102, b = f[11], out = tf11);
+	And(a = an102, b = f[12], out = tf12);
+	And(a = an102, b = f[13], out = tf13);
+	And(a = an102, b = f[14], out = tf14);
+	And(a = an102, b = f[15], out = tf15);
+
+	And(a = n0, b = a12, out = an012);
+
+	And(a = an012, b = g[0], out = tg0);
+	And(a = an012, b = g[1], out = tg1);
+	And(a = an012, b = g[2], out = tg2);
+	And(a = an012, b = g[3], out = tg3);
+	And(a = an012, b = g[4], out = tg4);
+	And(a = an012, b = g[5], out = tg5);
+	And(a = an012, b = g[6], out = tg6);
+	And(a = an012, b = g[7], out = tg7);
+	And(a = an012, b = g[8], out = tg8);
+	And(a = an012, b = g[9], out = tg9);
+	And(a = an012, b = g[10], out = tg10);
+	And(a = an012, b = g[11], out = tg11);
+	And(a = an012, b = g[12], out = tg12);
+	And(a = an012, b = g[13], out = tg13);
+	And(a = an012, b = g[14], out = tg14);
+	And(a = an012, b = g[15], out = tg15);
+
+	And(a = a01, b = sel[2], out = a012);
+
+	And(a = a012, b = h[0], out = th0);
+	And(a = a012, b = h[1], out = th1);
+	And(a = a012, b = h[2], out = th2);
+	And(a = a012, b = h[3], out = th3);
+	And(a = a012, b = h[4], out = th4);
+	And(a = a012, b = h[5], out = th5);
+	And(a = a012, b = h[6], out = th6);
+	And(a = a012, b = h[7], out = th7);
+	And(a = a012, b = h[8], out = th8);
+	And(a = a012, b = h[9], out = th9);
+	And(a = a012, b = h[10], out = th10);
+	And(a = a012, b = h[11], out = th11);
+	And(a = a012, b = h[12], out = th12);
+	And(a = a012, b = h[13], out = th13);
+	And(a = a012, b = h[14], out = th14);
+	And(a = a012, b = h[15], out = th15);
+
+	Or(a = ta0, b = tb0, out = otab0);
+	Or(a = tc0, b = td0, out = otcd0);
+	Or(a = te0, b = tf0, out = otef0);
+	Or(a = tg0, b = th0, out = otgh0);
+	Or(a = otab0, b = otcd0, out = otabcd0);
+	Or(a = otef0, b = otgh0, out = otefgh0);
+	Or(a = otabcd0, b = otefgh0, out = out[0]);
+
+	Or(a = ta1, b = tb1, out = otab1);
+	Or(a = tc1, b = td1, out = otcd1);
+	Or(a = te1, b = tf1, out = otef1);
+	Or(a = tg1, b = th1, out = otgh1);
+	Or(a = otab1, b = otcd1, out = otabcd1);
+	Or(a = otef1, b = otgh1, out = otefgh1);
+	Or(a = otabcd1, b = otefgh1, out = out[1]);
+
+	Or(a = ta2, b = tb2, out = otab2);
+	Or(a = tc2, b = td2, out = otcd2);
+	Or(a = te2, b = tf2, out = otef2);
+	Or(a = tg2, b = th2, out = otgh2);
+	Or(a = otab2, b = otcd2, out = otabcd2);
+	Or(a = otef2, b = otgh2, out = otefgh2);
+	Or(a = otabcd2, b = otefgh2, out = out[2]);
+
+	Or(a = ta3, b = tb3, out = otab3);
+	Or(a = tc3, b = td3, out = otcd3);
+	Or(a = te3, b = tf3, out = otef3);
+	Or(a = tg3, b = th3, out = otgh3);
+	Or(a = otab3, b = otcd3, out = otabcd3);
+	Or(a = otef3, b = otgh3, out = otefgh3);
+	Or(a = otabcd3, b = otefgh3, out = out[3]);
+
+	Or(a = ta4, b = tb4, out = otab4);
+	Or(a = tc4, b = td4, out = otcd4);
+	Or(a = te4, b = tf4, out = otef4);
+	Or(a = tg4, b = th4, out = otgh4);
+	Or(a = otab4, b = otcd4, out = otabcd4);
+	Or(a = otef4, b = otgh4, out = otefgh4);
+	Or(a = otabcd4, b = otefgh4, out = out[4]);
+
+	Or(a = ta5, b = tb5, out = otab5);
+	Or(a = tc5, b = td5, out = otcd5);
+	Or(a = te5, b = tf5, out = otef5);
+	Or(a = tg5, b = th5, out = otgh5);
+	Or(a = otab5, b = otcd5, out = otabcd5);
+	Or(a = otef5, b = otgh5, out = otefgh5);
+	Or(a = otabcd5, b = otefgh5, out = out[5]);
+
+	Or(a = ta6, b = tb6, out = otab6);
+	Or(a = tc6, b = td6, out = otcd6);
+	Or(a = te6, b = tf6, out = otef6);
+	Or(a = tg6, b = th6, out = otgh6);
+	Or(a = otab6, b = otcd6, out = otabcd6);
+	Or(a = otef6, b = otgh6, out = otefgh6);
+	Or(a = otabcd6, b = otefgh6, out = out[6]);
+
+	Or(a = ta7, b = tb7, out = otab7);
+	Or(a = tc7, b = td7, out = otcd7);
+	Or(a = te7, b = tf7, out = otef7);
+	Or(a = tg7, b = th7, out = otgh7);
+	Or(a = otab7, b = otcd7, out = otabcd7);
+	Or(a = otef7, b = otgh7, out = otefgh7);
+	Or(a = otabcd7, b = otefgh7, out = out[7]);
+
+	Or(a = ta8, b = tb8, out = otab8);
+	Or(a = tc8, b = td8, out = otcd8);
+	Or(a = te8, b = tf8, out = otef8);
+	Or(a = tg8, b = th8, out = otgh8);
+	Or(a = otab8, b = otcd8, out = otabcd8);
+	Or(a = otef8, b = otgh8, out = otefgh8);
+	Or(a = otabcd8, b = otefgh8, out = out[8]);
+
+	Or(a = ta9, b = tb9, out = otab9);
+	Or(a = tc9, b = td9, out = otcd9);
+	Or(a = te9, b = tf9, out = otef9);
+	Or(a = tg9, b = th9, out = otgh9);
+	Or(a = otab9, b = otcd9, out = otabcd9);
+	Or(a = otef9, b = otgh9, out = otefgh9);
+	Or(a = otabcd9, b = otefgh9, out = out[9]);
+
+	Or(a = ta10, b = tb10, out = otab10);
+	Or(a = tc10, b = td10, out = otcd10);
+	Or(a = te10, b = tf10, out = otef10);
+	Or(a = tg10, b = th10, out = otgh10);
+	Or(a = otab10, b = otcd10, out = otabcd10);
+	Or(a = otef10, b = otgh10, out = otefgh10);
+	Or(a = otabcd10, b = otefgh10, out = out[10]);
+
+	Or(a = ta11, b = tb11, out = otab11);
+	Or(a = tc11, b = td11, out = otcd11);
+	Or(a = te11, b = tf11, out = otef11);
+	Or(a = tg11, b = th11, out = otgh11);
+	Or(a = otab11, b = otcd11, out = otabcd11);
+	Or(a = otef11, b = otgh11, out = otefgh11);
+	Or(a = otabcd11, b = otefgh11, out = out[11]);
+
+	Or(a = ta12, b = tb12, out = otab12);
+	Or(a = tc12, b = td12, out = otcd12);
+	Or(a = te12, b = tf12, out = otef12);
+	Or(a = tg12, b = th12, out = otgh12);
+	Or(a = otab12, b = otcd12, out = otabcd12);
+	Or(a = otef12, b = otgh12, out = otefgh12);
+	Or(a = otabcd12, b = otefgh12, out = out[12]);
+
+	Or(a = ta13, b = tb13, out = otab13);
+	Or(a = tc13, b = td13, out = otcd13);
+	Or(a = te13, b = tf13, out = otef13);
+	Or(a = tg13, b = th13, out = otgh13);
+	Or(a = otab13, b = otcd13, out = otabcd13);
+	Or(a = otef13, b = otgh13, out = otefgh13);
+	Or(a = otabcd13, b = otefgh13, out = out[13]);
+
+	Or(a = ta14, b = tb14, out = otab14);
+	Or(a = tc14, b = td14, out = otcd14);
+	Or(a = te14, b = tf14, out = otef14);
+	Or(a = tg14, b = th14, out = otgh14);
+	Or(a = otab14, b = otcd14, out = otabcd14);
+	Or(a = otef14, b = otgh14, out = otefgh14);
+	Or(a = otabcd14, b = otefgh14, out = out[14]);
+
+	Or(a = ta15, b = tb15, out = otab15);
+	Or(a = tc15, b = td15, out = otcd15);
+	Or(a = te15, b = tf15, out = otef15);
+	Or(a = tg15, b = th15, out = otgh15);
+	Or(a = otab15, b = otcd15, out = otabcd15);
+	Or(a = otef15, b = otgh15, out = otefgh15);
+	Or(a = otabcd15, b = otefgh15, out = out[15]);
+
 }
